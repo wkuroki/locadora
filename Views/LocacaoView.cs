@@ -8,7 +8,7 @@ namespace Locadora.Models
     {
         public LocacaoView()
         {
-            Locacao = new List<LocacaoItemView>();
+            LocacaoItems = new List<LocacaoItemView>();
 
         }
         public LocacaoView(Locacao Locacao)
@@ -17,15 +17,15 @@ namespace Locadora.Models
             this.IdCliente = Locacao.IdCliente;
 
 
-            this.NomeCliente = Locacao.Clientes.Nome.ToString();
-            this.Locacao = Locacao.LocacaoItems.Select(e => new LocacaoItemView(e)).ToList();
+            this.Nome = Locacao.Clientes.Nome.ToString();
+            this.LocacaoItems = Locacao.LocacaoItems.Select(e => new LocacaoItemView(e)).ToList();
         }
 
         public long Id { get; set; }
         public long IdCliente { get; set; }
-        public string NomeCliente { get; set; }
+        public string Nome { get; set; }
 
-        public List<LocacaoItemView> Locacao { get; set; }
+        public List<LocacaoItemView> LocacaoItems { get; set; }
 
         public Locacao ToLocacao()
         {
@@ -33,8 +33,9 @@ namespace Locadora.Models
             {
                 Id = this.Id,
                 IdCliente = this.IdCliente,
-                LocacaoItems = Locacao.Select(e => e.ToLocacaoItem(this.Id)).ToList(),
+                LocacaoItems = LocacaoItems.Select(e => e.ToLocacaoItem(this.Id)).ToList(),
             };
         }
+
     }
 }
