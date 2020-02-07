@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+
 namespace Locadora.Entities
 {
     public partial class LocacaoItem : BaseEntity
@@ -13,5 +15,6 @@ namespace Locadora.Entities
         public long IdFilme { get; set; }
         public string Descricao { get; set; }
         public Locacao Locacao { get; set; }
+
     }
 }
