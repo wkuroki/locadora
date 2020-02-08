@@ -31,14 +31,14 @@ http://localhost:5000/api/locacao/Salvar
     "Id":"0",
     "IdCliente":"1",
     "Excluido":"false",
-     "LocacaoItems":[{"Id":0,"IdLocacaoItem":"1","IdFilme":1,"Descricao":"CENTRAL DO BRASIL","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdLocacaoItem":"2","IdFilme":2,"Descricao":"TITANIC","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdLocacaoItem":"3","IdFilme":3,"Descricao":"ROCK Y - UM LUTADOR","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdLocacaoItem":"4","IdFilme":4,"Descricao":"VINGADORES - GUERRA INFINITA","Status":"ALUGADO","Excluido":"false",}]}
+     "LocacaoItems":[{"Id":0,"IdFilme":1,"Descricao":"CENTRAL DO BRASIL","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdFilme":2,"Descricao":"TITANIC","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdFilme":3,"Descricao":"ROCK Y - UM LUTADOR","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdFilme":4,"Descricao":"VINGADORES - GUERRA INFINITA","Status":"ALUGADO","Excluido":"false",}]}
 
 ***Alteração ou Exclusão de Itens
 {
     "Id":"1",
     "IdCliente":"1",
     "Excluido":"false",
-     "LocacaoItems":[{"Id":1,"IdLocacaoItem":"1","IdFilme":1,"Descricao":"CENTRAL DO BRASIL","Status":"DEVOLVIDO","Excluido":"false"},{"Id":2,"IdLocacaoItem":"2","IdFilme":2,"Descricao":"TITANIC","Status":"ALUGADO","Excluido":"false"},{"Id":3,"IdLocacaoItem":"3","IdFilme":3,"Descricao":"ROCK Y - UM LUTADOR","Status":"ALUGADO","Excluido":"false"},{"Id":4,"IdLocacaoItem":"4","IdFilme":4,"Descricao":"VINGADORES - GUERRA INFINITA","Status":"DEVOLVIDO","Excluido":"false",}]}
+     "LocacaoItems":[{"Id":"1","IdFilme":1,"Descricao":"CENTRAL DO BRASIL","Status":"DEVOLVIDO","Excluido":"false"},{"Id":"2","IdFilme":2,"Descricao":"TITANIC","Status":"ALUGADO","Excluido":"false"},{"Id":"3","IdFilme":3,"Descricao":"ROCK Y - UM LUTADOR","Status":"ALUGADO","Excluido":"false"},{"Id":"4","IdFilme":4,"Descricao":"VINGADORES - GUERRA INFINITA","Status":"DEVOLVIDO","Excluido":"false",}]}
 
 Método: GET
 ***CONSULTAR A LISTA DE LOCAÇÃO
