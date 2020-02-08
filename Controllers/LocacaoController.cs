@@ -13,15 +13,15 @@
         /// <summary>
         /// Repositório de dados
         /// </summary>
-        private readonly Locacaoervice Locacaoervice;
+        private readonly LocacaoService LocacaoService;
 
         /// <summary>
         /// Construtor
         /// </summary>
-        /// <param name="Locacaoervice">Repositório de dados</param>
-        public LocacaoController(Locacaoervice Locacaoervice)
+        /// <param name="LocacaoService">Repositório de dados</param>
+        public LocacaoController(LocacaoService LocacaoService)
         {
-            this.Locacaoervice = Locacaoervice;
+            this.LocacaoService = LocacaoService;
         }
 
         /// <summary>
@@ -40,11 +40,11 @@
 
             if (model.Id > 0)
             {
-                Locacaoervice.Update(model);
+                LocacaoService.Update(model);
             }
             else
             {
-                Locacaoervice.Insert(model);
+                LocacaoService.Insert(model);
             }
 
             return Json(model.Id);
@@ -62,7 +62,7 @@
         [Route("[action]")]
         public ActionResult Excluir(long id)
         {
-            Locacaoervice.Delete(id);
+            LocacaoService.Delete(id);
             return Ok(id);
         }
 
@@ -78,7 +78,7 @@
         [Route("[action]")]
         public JsonResult ListarLocacao(int limite)
         {
-            var registros = Locacaoervice.ListarPorPagina(string.Empty, null, limite);
+            var registros = LocacaoService.ListarPorPagina(string.Empty, null, limite);
             return Json(registros.Select(e => new LocacaoView(e)).ToList());
         }
 
@@ -96,12 +96,12 @@
         [Route("[action]")]
         public JsonResult ListarLocacaoPorPagina(string pesquisa, int? pagina, int? totaLinhas)
         {
-            var registros = Locacaoervice.ListarPorPagina(pesquisa, pagina, totaLinhas);
+            var registros = LocacaoService.ListarPorPagina(pesquisa, pagina, totaLinhas);
 
             var Locacao = new
             {
                 Locacao = registros.Select(e => new LocacaoView(e)).ToList(),
-                totalLinhas = Locacaoervice.RowsCount()
+                totalLinhas = LocacaoService.RowsCount()
             };
 
             return Json(Locacao);
@@ -119,7 +119,7 @@
         [Route("[action]")]
         public JsonResult ListarLocacaoPorId(long id)
         {
-            Locacao model = Locacaoervice.SelectById(id) ?? new Locacao();
+            Locacao model = LocacaoService.SelectById(id) ?? new Locacao();
 
             return Json(new LocacaoView(model));
         }

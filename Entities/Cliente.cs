@@ -11,6 +11,7 @@ namespace Locadora.Entities
         }
 
         public string Nome { get; set; }
+        public string Apelido { get; set; }
 
         public ICollection<Locacao> Locacao { get; set; }
     }

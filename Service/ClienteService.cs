@@ -35,15 +35,15 @@
         /// <summary>
         /// Atualizar Cliente
         /// </summary>
-        /// <param name="usuario">objeto do tipo Cliente</param>
+        /// <param name="cliente">objeto do tipo Cliente</param>
         /// <returns>Retorna o objeto do tipo Cliente</returns>
-        public override Cliente Update(Cliente cliente)
-        {
-            this.context.Entry(cliente).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+        //public override Cliente Update(Cliente cliente)
+        //{
+        //    this.context.Entry(cliente).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 
-            this.context.SaveChanges();
-            return cliente;
-        }
+        //    this.context.SaveChanges();
+        //    return cliente;
+        //}
 
         /// <summary>
         /// Selecionar Cliente por identificador

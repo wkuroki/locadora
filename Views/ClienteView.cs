@@ -15,17 +15,24 @@ namespace Locadora.Models
             {
                 IdCliente = cliente.Id;
                 Nome = cliente.Nome;
+                Apelido = cliente.Apelido;
+                Excluido = cliente.Excluido;
             }
         }
 
         public long IdCliente { get; set; }
         public string Nome { get; set; }
+        public string Apelido { get; set; }
+        public bool Excluido { get; set; }
+
         public Cliente ToCliente()
         {
             return new Cliente()
             {
                 Id = IdCliente,
                 Nome = Nome,
+                Apelido = Apelido,
+                Excluido = Excluido,
             };
         }
     }

@@ -29,6 +29,13 @@
                 .IsUnicode(false)
                 .HasDefaultValueSql("('')");
 
+            entity
+                .Property(e => e.Apelido)
+                .IsRequired()
+                .HasMaxLength(70)
+                .IsUnicode(false)
+                .HasDefaultValueSql("('')");
+
         }
     }
 }

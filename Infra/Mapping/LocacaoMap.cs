@@ -22,6 +22,12 @@
             entity
                 .Property(e => e.IdCliente)
                 .HasColumnName("Id_Cliente");
+
+            entity
+                 .HasOne(d => d.Clientes)
+                      .WithMany(p => p.Locacao)
+                      .HasForeignKey(d => d.IdCliente)
+                      .HasConstraintName("fk_tb_locacao_tb_cliente");
         }
     }
 }

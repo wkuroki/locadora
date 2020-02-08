@@ -10,7 +10,7 @@
     /// <summary>
     /// Locacao Service (Interno)
     /// </summary>
-    public class Locacaoervice : BaseService<Locacao>
+    public class LocacaoService : BaseService<Locacao>
     {
         /// <summary>
         /// Repositório
@@ -26,7 +26,7 @@
         /// Construtor
         /// </summary>
         /// <param name="repository">BaseRepository<Locacao></param>
-        public Locacaoervice(BaseRepository<Locacao> repository) : base(repository)
+        public LocacaoService(BaseRepository<Locacao> repository) : base(repository)
         {
             this.repository = repository;
             this.context = this.repository.context;
