@@ -1,0 +1,85 @@
+Método: POST
+
+***CADASTRAMENTO DE FILME
+http://localhost:5000/api/filme/Salvar
+*** IdFilme 0 (Zero) efetua a inclusão, diferente altera ou exclui
+*** Excluido true (Verdadeiro) exclui o registro
+{
+   "IdFilme" : "0",
+   "Descricao" : "NOME DO FILME",
+   "Ativo" : "1",
+   "Excluido": "false"
+}
+
+***CADASTRAMENTO DE CLIENTE
+http://localhost:5000/api/cliente/Salvar
+*** IdCliente 0 (Zero) efetua a inclusão, diferente altera ou exclui
+*** Excluido true (Verdadeiro) exclui o registro
+{
+   "IdCliente": "0",
+   "Nome" : "NOME DO CLIENTE",
+   "Apelido" : "APELIDO DO CLIENTE",
+   "Excluido": "false"
+}
+
+***CADASTRAMENTO DE LOCAÇÃO
+http://localhost:5000/api/locacao/Salvar
+*** IdCliente 0 (Zero) efetua a inclusão, diferente altera ou exclui
+*** Excluido true (Verdadeiro) exclui o registro
+****Inclusão de Locação
+{
+    "Id":"0",
+    "IdCliente":"1",
+    "Excluido":"false",
+     "LocacaoItems":[{"Id":0,"IdLocacaoItem":"1","IdFilme":1,"Descricao":"CENTRAL DO BRASIL","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdLocacaoItem":"2","IdFilme":2,"Descricao":"TITANIC","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdLocacaoItem":"3","IdFilme":3,"Descricao":"ROCK Y - UM LUTADOR","Status":"ALUGADO","Excluido":"false"},{"Id":0,"IdLocacaoItem":"4","IdFilme":4,"Descricao":"VINGADORES - GUERRA INFINITA","Status":"ALUGADO","Excluido":"false",}]}
+
+***Alteração ou Exclusão de Itens
+{
+    "Id":"1",
+    "IdCliente":"1",
+    "Excluido":"false",
+     "LocacaoItems":[{"Id":1,"IdLocacaoItem":"1","IdFilme":1,"Descricao":"CENTRAL DO BRASIL","Status":"DEVOLVIDO","Excluido":"false"},{"Id":2,"IdLocacaoItem":"2","IdFilme":2,"Descricao":"TITANIC","Status":"ALUGADO","Excluido":"false"},{"Id":3,"IdLocacaoItem":"3","IdFilme":3,"Descricao":"ROCK Y - UM LUTADOR","Status":"ALUGADO","Excluido":"false"},{"Id":4,"IdLocacaoItem":"4","IdFilme":4,"Descricao":"VINGADORES - GUERRA INFINITA","Status":"DEVOLVIDO","Excluido":"false",}]}
+
+Método: GET
+***CONSULTAR A LISTA DE LOCAÇÃO
+http://localhost:5000/api/locacao/ListarLocacaoPorPagina?pesquisa=''?pagina=1?totallinhas=100
+{
+    "locacao": [
+        {
+            "id": 1,
+            "idCliente": 1,
+            "nome": "WELLINGTON KUROKI",
+            "locacaoItems": [
+                {
+                    "id": 1,
+                    "idFilme": 1,
+                    "descricao": "CENTRAL DO BRASIL",
+                    "status": "DEVOLVIDO",
+                    "excluido": false
+                },
+                {
+                    "id": 2,
+                    "idFilme": 2,
+                    "descricao": "TITANIC",
+                    "status": "ALUGADO",
+                    "excluido": false
+                },
+                {
+                    "id": 3,
+                    "idFilme": 3,
+                    "descricao": "ROCK Y - UM LUTADOR",
+                    "status": "ALUGADO",
+                    "excluido": false
+                },
+                {
+                    "id": 4,
+                    "idFilme": 4,
+                    "descricao": "VINGADORES - GUERRA INFINITA",
+                    "status": "DEVOLVIDO",
+                    "excluido": false
+                }
+            ]
+        }
+    ],
+    "totalLinhas": 1
+}
