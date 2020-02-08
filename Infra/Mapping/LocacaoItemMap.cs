@@ -33,6 +33,11 @@
                 .HasMaxLength(70)
                 .IsUnicode(false);
 
+            entity.Property(e => e.Status)
+                .HasColumnName("Status")
+                .HasMaxLength(70)
+                .IsUnicode(false);
+
             entity
                 .HasOne(d => d.Locacao)
                 .WithMany(p => p.LocacaoItems)

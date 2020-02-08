@@ -14,7 +14,7 @@ namespace Locadora.Entities
         public long IdLocacao { get; set; }
         public long IdFilme { get; set; }
         public string Descricao { get; set; }
+        public string Status { get; set; }
         public Locacao Locacao { get; set; }
-
     }
 }

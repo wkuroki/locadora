@@ -15,12 +15,14 @@ namespace Locadora.Models
             Id = LocacaoItem.Id;
             IdFilme = LocacaoItem.IdFilme;
             Descricao = LocacaoItem.Descricao;
+            Status = LocacaoItem.Status;
             Excluido = false;
         }
 
         public long Id { get; set; }
         public long IdFilme { get; set; }
         public string Descricao { get; set; }
+        public string Status { get; set; }
         public bool Excluido { get; set; }
 
         public LocacaoItem ToLocacaoItem()
@@ -30,6 +32,7 @@ namespace Locadora.Models
                 Id = Id,
                 IdFilme = IdFilme,
                 Descricao = Descricao,
+                Status = Status,
                 Excluido = Excluido
             };
         }
@@ -42,6 +45,7 @@ namespace Locadora.Models
                 Id = Id,
                 IdFilme = IdFilme,
                 Descricao = Descricao,
+                Status = Status,
                 Excluido = Excluido
             };
         }
